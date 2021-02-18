@@ -1,0 +1,45 @@
+
+/* block name  */
+
+header {
+  height: auto;
+  background-color: $primaryColor;
+  width: 100%;
+  position: sticky;
+  top: 0; 
+}
+
+.navbar {
+  
+  background-color: $primaryColor;
+  padding-left: $leftPaddingXL;
+  /* padding-bottom: 25px; */
+  padding: 25px $leftPaddingXL;
+  /* width: 20rem; */
+
+  /* modifier  */
+  &--color{
+    background-color: $off-black ;
+  }
+
+  /* element of block  */
+  &__item {
+    padding: 1rem;
+  }
+
+  a {
+    color : white; 
+    letter-spacing: 2px;
+    font-weight: 300;
+    padding: 5px 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    /* width: 100%; */
+  }
+
+  a:hover {
+    font-size : 1.05rem; 
+    color: $yellowColor !important;
+  }
+}

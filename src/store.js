@@ -6,19 +6,8 @@ import filterReducer from './reducers/filter'
 import priceReducer from './reducers/price'
 import userReducer  from './reducers/userReducer'
 
-// redirect in acion 
-import { createBrowserHistory } from 'history'
-// allows reducers access router
-import { routerMiddleware } from 'connected-react-router'
-
-export const history = createBrowserHistory()
-
-const reactRouterMiddleware = routerMiddleware(history); 
-
-
-
 const middlewares = [
-  thunk, reactRouterMiddleware
+  thunk 
 ] 
 
 const reducer = combineReducers ({

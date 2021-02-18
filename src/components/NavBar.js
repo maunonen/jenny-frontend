@@ -5,18 +5,19 @@ import { useSelector } from 'react-redux'
 
 const NavBar = () => {
   const isLogged = useSelector(state => state.user.isLogged)
-  /* const isLogged = true */
   return (
     <div>
-      <Link to="/">home</Link>  
-
-      { isLogged && <Link to="/profile">Profile</Link>}
-      { isLogged && <Link to="/add_price">Create Price</Link>}
-      { isLogged && <Link to="/show_price_list">My Prices</Link>}
-      
-      { !isLogged && <Link to="/login">Login</Link> }
-      { !isLogged && <Link to="/register">Register</Link> }
-
+      <header>
+        <div className="navbar menu--color">
+          <Link className="navbar__item" to="/">home</Link>  
+          { isLogged && <Link className="navbar__item" to="/profile">Profile</Link>}
+          { isLogged && <Link className="navbar__item" to="/add_price">Create Price</Link>}
+          { isLogged && <Link className="navbar__item" to="/show_price_list">My Prices</Link>}
+          { isLogged && <Link className="navbar__item" to="/logout">Logout</Link> }
+          { !isLogged && <Link className="navbar__item" to="/login">Login</Link> }
+          { !isLogged && <Link className="navbar__item" to="/register">Register</Link> }
+        </div>
+      </header>
   </div>
   )
 }

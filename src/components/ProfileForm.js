@@ -88,37 +88,58 @@ const ProfileForm = ()=> {
 
 
   return (
-    <div>
-    <h1>Profile Form</h1>
-    { message.message && message.message }
-    { message.type && message.type }
+    <div className="form-container form-container--sm">
     <form onSubmit={handleUpdateProfile}>
-      <label htmlFor="username">Username:</label>
-      <input 
-        type="text" 
-        value={username} 
-        name="username" 
-        onChange={({target})=> setUsername(target.value)}
-      />
-      <br/>
-      <label htmlFor="name">Name:</label>
-      <input 
-        type="text" 
-        value={name} 
-        name="name"
-        onChange={({target}) => setName(target.value)}
-      />
-      <br/>
-      <label htmlFor="email">Email:</label>
-      <input 
-        type="text" 
-        value={email} 
-        name="email"
-        onChange={({target}) => setEmail(target.value)}
-      />
-      <br/>
-      <button type="submit">Update Profile</button>
-      <button onClick={handleChangePassword}>Change Password</button>
+      <h1 className="form-container__title">Profile Form</h1>
+      { message.message && message.message }
+      { message.type && message.type }
+      <div className="form-row form-row--label">
+        <label className="form-row__label" htmlFor="username">Username:</label>
+        <input 
+          id="username"
+          className="form-row__input"
+          placeholder="username"
+          type="text" 
+          value={username} 
+          name="username" 
+          onChange={({target})=> setUsername(target.value)}
+        />
+      </div>
+      <div className="form-row form-row--label">
+        <label className="form-row__label" htmlFor="name">Name:</label>
+        <input 
+          id="name"
+          placeholder="name"
+          className="form-row__input"
+          type="text" 
+          value={name} 
+          name="name"
+          onChange={({target}) => setName(target.value)}
+        />
+      </div>
+      <div className="form-row form-row--label">
+         <label className="form-row__label" htmlFor="email">Email:</label> 
+        <input 
+          id="email"
+          placeholder="email"
+          className="form-row__input"
+          type="text" 
+          value={email} 
+          name="email"
+          onChange={({target}) => setEmail(target.value)}
+        />
+      </div>
+      <div className="form-row__input">
+        <button 
+          className="form-button form-button--sm"
+          type="submit">
+            Update Profile
+        </button>
+        <button 
+          onClick={handleChangePassword}
+          className="form-button form-button--sm" 
+          >Change Password</button>
+      </div>
     </form>
 </div>
     

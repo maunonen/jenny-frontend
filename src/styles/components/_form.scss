@@ -1,0 +1,84 @@
+.form-container {
+
+  width: 80%;
+  margin: 40px  auto;
+  padding: 20px 40px;
+  background-color: lighten($color: $primaryColor, $amount: 75%);
+  box-shadow: 4px 4px 4px 4px rgba( 0, 0, 0, $alpha: 0.05), inset 1px 1px 1px 1px rgba( 0, 0, 0, $alpha: 0.05) ; 
+  border-radius: 3px;
+}
+
+.form-container__title {
+  margin-bottom: 15px;
+  padding : 5px; 
+
+}
+
+.form-container--sm {
+  width: 40%;
+}
+
+form {
+  margin-top: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  padding : 5px; 
+  margin-bottom: 10px;
+}
+
+.form-row--label {
+  margin-bottom: 5px;
+}
+
+
+
+.form-row__input {
+  width: 100%;
+  display: inline-block;
+  flex: 1; 
+  padding: 10px; 
+  font-family: Open Sans, sans-serif !important;
+  font-size: 1rem; 
+  box-sizing: border-box;
+  outline: none;
+  border: 3px, solid $primaryColor !important; 
+}
+
+.form-row__input--sm {
+  font-size: 0.9rem;
+  padding: 7px;
+}
+
+.form-row__label {
+    display: block;
+    font-family: Open Sans, sans-serif !important;
+    font-size: 0.8rem;  
+    margin-bottom: 5px;
+}
+
+.form-row__input:focus {
+  border: 2px solid lighten($color: $yellowColor, $amount: 30%); 
+  /* border: 1px lighten($color: $yellowColor, $amount: 10%);  */
+}
+
+.form-button {
+  @extend .link-btn; 
+  height: 50px;
+  background-color: lighten($color: $primaryColor, $amount: 20%);   
+  border: none;
+  margin-right: 20px;
+}
+
+.form-button--sm {
+  @extend .form-button; 
+  height: 35px;  
+  font-size: 12px;
+  padding: 3px 15px;
+  letter-spacing: 3px;
+  font-weight: 550;
+  background-color: lighten($color: $primaryColor, $amount: 20%);   
+}
+

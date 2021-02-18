@@ -2,11 +2,7 @@ import React, { useEffect} from 'react'
 import {
   BrowserRouter as Router, 
   Switch, 
-  Route, 
-  /* Link, 
-  Redirect, 
-  useHistory, 
-  useRouteMatch */
+  Route 
 } from 'react-router-dom'
 import LoginForm from '../components/LoginForm'
 import HomePage from '../components/HomePage' 
@@ -15,27 +11,28 @@ import RegistrationForm from '../components/RegistrationForm'
 import ProfileForm from '../components/ProfileForm'
 import AddPrice from '../components/AddPrice'
 import ShowPriceList from '../components/ShowPriceList'
-import { useSelector} from 'react-redux' 
+import PrivateRoute from './PrivateRouter'
+import LogOut from '../components/LogOut'
+import Footer from '../components/Footer'
 
 
 const AppRouter = (props) => {
 
-  const  isLogged = useSelector(state => state.user.isLogged)
-  
   return (
     <div>
       <NavBar/>
       <Switch>
-          <Route path="/" exact={true} component={HomePage}/>
-          <Route path="/login" component={LoginForm}/>
-          { isLogged && <Route path="/profile" component={ProfileForm}/>}
-          { isLogged && <Route path="/add_price" component={AddPrice}/>}
-          { isLogged && <Route path="/show_price_list" component={ShowPriceList}/>} 
-
-          {!isLogged && <Route path="/register" component={RegistrationForm}/>}
+        <Route path="/" exact={true} component={HomePage}/>
+        <Route path="/login" component={LoginForm}/>
+        <Route path="/register" component={RegistrationForm}/>
+        <PrivateRoute exact path="/profile" component={ProfileForm}/>
+        <PrivateRoute exact path="/add_price" component={AddPrice}/>
+        <PrivateRoute exact path="/show_price_list" component={ShowPriceList}/>
+        <PrivateRoute exact path="/add_price" component={AddPrice}/>
+        <PrivateRoute exact path="/logout" component={LogOut}/>
       </Switch>
+      <Footer/>
     </div>
   )
-
 }
-export default AppRouter;
+  export default AppRouter;

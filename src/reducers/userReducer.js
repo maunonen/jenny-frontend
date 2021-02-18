@@ -1,17 +1,15 @@
 import { 
-  REGISTER_FAILED, 
-  REGISTER_SUCCESS, 
   LOGIN_SUCCESS , 
   LOGIN_FAILED , 
-  /* LOGIN_LOADING  ,  */
   LOGOUT_SUCCESS , 
  } from "../action/userAction";
 
  function getInitialState() {
-    if (sessionStorage.getItem("isLogged")){
+    
+  if (sessionStorage.getItem("isLogged")){
       let tempIsLogged = false 
       let tempToken = "" 
-      if (sessionStorage.getItem("isLogged") === true && sessionStorage.getItem("token") === true ) {
+      if (sessionStorage.getItem("isLogged") === 'true' && sessionStorage.getItem("token") ) {
         tempIsLogged = true
         tempToken = sessionStorage.getItem("token")
       }      
@@ -19,6 +17,9 @@ import {
       if (sessionStorage.getItem("login_error")){
         error = sessionStorage.getItem("login_error")
       }
+      console.log("is logged", tempIsLogged)
+      console.log("token", tempToken)
+      console.log("error", error)
       return {
         isLogged : tempIsLogged, 
         token : tempToken, 
@@ -43,6 +44,7 @@ const saveToStorage = (isLogged, error, token="") => {
 
 const loginReducer = ( state = initialState, action) => {
   console.log("Login Reducer - action" + action.type)
+  console.log("USER REDUCER", state)
   switch (action.type){
     case LOGIN_SUCCESS: 
       saveToStorage("true", "", action.token)
@@ -59,7 +61,16 @@ const loginReducer = ( state = initialState, action) => {
         ...state, 
         error : action.error
       }
-    case REGISTER_SUCCESS:
+    case LOGOUT_SUCCESS: 
+      saveToStorage(false, '', '')
+      return {
+        ...state, 
+        token : '', 
+        isLogged : false, 
+        error : "", 
+      }
+
+    /* case REGISTER_SUCCESS:
         return {
           ...state
         }
@@ -68,7 +79,7 @@ const loginReducer = ( state = initialState, action) => {
         return {
           ...state,
           error : action.error
-        }
+        } */
 
     default : 
       return state;   

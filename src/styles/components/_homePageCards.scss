@@ -1,0 +1,70 @@
+.cards {
+  padding-top: 60px;
+}
+
+.cards-table {
+  flex: 1;
+  display: flex;
+}
+.cards-col {
+  padding-right: 30px;
+}
+
+.cards-col--shift {
+  padding-top: 90px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 38px;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 7px 7px rgba( 0, 0, 0, $alpha: 0.05);
+}
+
+.card--shift {
+  padding-top: 40px;
+}
+.card__picture {
+  
+}
+.card__title {
+  font-family: Oswald, sans-serif !important;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.card__text {
+  line-height: 1.8;
+  font-style: italic;
+  font-size: 1.125rem;
+  color: $cardTextColor;
+  font-family: Open Sans, sans-serif;
+}
+
+.cards-about {
+  flex: 1;
+  margin-top: 100px;
+  padding-left: 30px;
+  margin-left: 20px;
+}
+.cards-about__title {
+  font-style: Roboto, sans-serif;
+  letter-spacing: 7px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+.cards-about__slogan {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 3.75rem;
+  font-weight: 700;
+}
+.cards-about__text {
+  font-size: 1rem;
+  font-family: Open Sans, sans-serif !important;
+  font-weight: 700;
+  line-height: 2em;
+}

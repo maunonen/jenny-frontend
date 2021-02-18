@@ -1,6 +1,4 @@
 import userService from '../services/user'
-import { push } from 'connected-react-router'
-
 
 export const REGISTER_LOADING = "REGISTER_LOADING"
 export const REGISTER_FAILED = "REGISTER_FAILED"
@@ -10,14 +8,13 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS"
 export const LOGIN_FAILED = "LOGIN_FAILED"
 export const LOGIN_LOADING = "LOGIN_LOADING"
 
-export const LOGOUT_SUCCESS = "LOGIN_SUCCESS"
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
 
-export const login = (credentials) => {
+/* export const login = (credentials) => {
   return async dispatch => {
     try {
       const responce = await userService.login(credentials)
       dispatch(loginSuccess( responce.data))
-      dispatch(push('/profile'))
     } catch (err){
       if (err.response) {
         // The request was made and the server responded with a status code
@@ -43,9 +40,9 @@ export const login = (credentials) => {
       }
     }
   }
-}
+} */
 
-export const register = (user) => {
+/* export const register = (user) => {
   return async dispatch => {
     try {
       const responce = await userService.register(user)
@@ -76,25 +73,31 @@ export const register = (user) => {
       }
     }
   }
-}
+} */
 
 
 // action creator 
-const loginSuccess = ({ token }) => {
+export const loginSuccess = ({ token }) => {
   return {
     type : LOGIN_SUCCESS, 
     token : token
   }
 }
 
-const loginFailed = (error) => {
+export const loginFailed = (error) => {
   return {
     type : LOGIN_FAILED, 
     error
   }
 }
 
-const registerSuccess = (user) => {
+export const logoutSuccess = () => {
+  return {
+    type: LOGOUT_SUCCESS
+  }
+}
+
+/* const registerSuccess = (user) => {
   return {
     type : REGISTER_SUCCESS
   }
@@ -105,4 +108,4 @@ const registerFailed = (error) => {
     type : REGISTER_FAILED, 
     error
   }
-}
+} */

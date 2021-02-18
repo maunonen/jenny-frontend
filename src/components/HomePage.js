@@ -1,10 +1,13 @@
 import React from 'react'
+import HomePageAbout from './HomePageAbout'
+import HomePageCards from './HomePageCards'
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
-    <h1>
-      Home page
-    </h1>
+    <div>
+      <HomePageAbout/>  
+      <HomePageCards/>
+    </div>
   )
 }
 

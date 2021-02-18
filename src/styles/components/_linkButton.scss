@@ -1,0 +1,29 @@
+.link-btn {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 18px;
+  display: inline-block;
+  height: 30px;
+  padding : 10px 30px; 
+  align: center; 
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: $primaryColor;
+}
+
+.link-btn--white {
+  color: $primaryColor;
+  background-color: white;
+}
+.link-btn--white:hover {
+  color: white !important;
+  background-color: $primaryColor !important;
+}
+
+.link-btn:hover {
+  background-color: $yellowColor;
+  color : $primaryColor; 
+  transition: all 0.2s linear;
+}

@@ -1,0 +1,18 @@
+@import '../../node_modules/normalize-scss/sass/normalize'; 
+@import './base/settings'; 
+@import './base/base'; 
+@import './components/linkButton'; 
+@import './components/header'; 
+@import './components/container'; 
+@import './components/footer'; 
+@import './components/homePageAbout'; 
+@import './components/homePageCards'; 
+
+@import './components/form'; 
+@import './components/formButton'; 
+@import './components/creator'; 
+
+
+* {
+  color : $primaryColor; 
+}
