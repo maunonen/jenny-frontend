@@ -9,11 +9,11 @@ const NavBar = () => {
     <div>
       <header>
         <div className="navbar menu--color">
-          <Link className="navbar__item" to="/">home</Link>  
+          <Link className="navbar__item" to="/">Home</Link>  
           { isLogged && <Link className="navbar__item" to="/profile">Profile</Link>}
-          { isLogged && <Link className="navbar__item" to="/add_price">Create Price</Link>}
           { isLogged && <Link className="navbar__item" to="/show_price_list">My Prices</Link>}
           { isLogged && <Link className="navbar__item" to="/logout">Logout</Link> }
+          { !isLogged && <Link className="navbar__item" to="/add_price">Create Price</Link>}
           { !isLogged && <Link className="navbar__item" to="/login">Login</Link> }
           { !isLogged && <Link className="navbar__item" to="/register">Register</Link> }
         </div>

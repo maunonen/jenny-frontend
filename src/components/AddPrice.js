@@ -124,8 +124,11 @@ const AddPrice = () => {
     try {
       console.log('send request')
       const responce = await priceService.addPrice(priceObjet, token ); 
-      handleMessage('Succes', 'error')
-      
+      const blob =  new Blob([responce.data], { type: 'application/pdf' }); 
+      const link = document.createElement('a')
+      link.href = window.URL.createObjectURL(blob)
+      link.download = `mypdf.pdf`
+      link.click()
     } catch (err) {
       if (err.response) {
         // The request was made and the server responded with a status code

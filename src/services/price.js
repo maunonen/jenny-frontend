@@ -3,9 +3,14 @@ const baseUrl = '/api/price'
 
 const addPrice = async (priceObject,  token ) => {
   
+  
   token = `bareer ${token}`
   const config = {
-    headers : {Authorizaation : token }
+    responseType: 'arraybuffer',
+    headers : {
+      Authorizaation : token, 
+      'Accept': 'application/pdf'
+    },  
   }
   const responce = await axios.post(baseUrl, priceObject, config); 
   return responce; 

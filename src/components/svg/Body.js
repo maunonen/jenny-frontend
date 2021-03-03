@@ -62,11 +62,3 @@ function Body(props) {
 }
 
 export default Body;
-
-/* const [luggage, setLuggage] = useState(false)
-    const [specialLuggage, setSpecialLuggage] = useState(false)
-    const [animal, setAnimal] = useState(false)
-    const [invalid, setInvalid] = useState(false)
-    const [delivery, setDeliviry] = useState(false)
-    const [airport, setAirport] = useState(false)
- */

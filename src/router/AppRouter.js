@@ -25,8 +25,8 @@ const AppRouter = (props) => {
         <Route path="/" exact={true} component={HomePage}/>
         <Route path="/login" component={LoginForm}/>
         <Route path="/register" component={RegistrationForm}/>
+        <Route path="/add_price" component={AddPrice}/>
         <PrivateRoute exact path="/profile" component={ProfileForm}/>
-        <PrivateRoute exact path="/add_price" component={AddPrice}/>
         <PrivateRoute exact path="/show_price_list" component={ShowPriceList}/>
         <PrivateRoute exact path="/add_price" component={AddPrice}/>
         <PrivateRoute exact path="/logout" component={LogOut}/>
